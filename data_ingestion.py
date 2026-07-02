@@ -1,9 +1,21 @@
 import os
 import glob
+
 import pandas as pd
 
 
 def find_csv_files():
+    """
+    Locate all CSV datasets required for the project.
+
+    Search order:
+    1. data/raw
+    2. Downloads
+    3. Workspace root
+
+    Returns:
+        list[str]: Paths to discovered CSV files.
+    """
     paths = []
     # prefer project data/raw
     paths.extend(glob.glob(os.path.join("data", "raw", "*.csv")))
