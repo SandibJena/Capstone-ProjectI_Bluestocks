@@ -134,3 +134,4 @@ python live_nav_fetch.py --codes 125497 119551 120503 118632 119092 120841
 - Add EDA notebooks with visualisations under `notebooks/`
 - Implement data tests to catch date parse failures, negative NAVs, and AMFI mismatches
 - Build dashboard prototype to visualize AUM, NAV trends, and SIP flows
+-This i an update in the readme file so i can check wether it is being updated or not.
