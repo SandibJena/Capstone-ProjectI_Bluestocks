@@ -1,11 +1,39 @@
-01_fund_master.csv: shape=(40, 15), issues=[]
-02_nav_history.csv: shape=(46000, 3), issues=[]
-03_aum_by_fund_house.csv: shape=(90, 5), issues=[]
-04_monthly_sip_inflows.csv: shape=(48, 6), issues=["Missing Values: {'yoy_growth_pct': 12}"]
-05_category_inflows.csv: shape=(144, 3), issues=[]
-06_industry_folio_count.csv: shape=(21, 6), issues=[]
-07_scheme_performance.csv: shape=(40, 19), issues=[]
-08_investor_transactions.csv: shape=(32778, 13), issues=[]
-09_portfolio_holdings.csv: shape=(322, 8), issues=[]
-10_benchmark_indices.csv: shape=(8050, 3), issues=[]
-transaction_data.csv: shape=(2, 8), issues=[]
+01_fund_master.csv
+Shape: (40, 15)
+Issues: []
+
+02_nav_history.csv
+Shape: (46000, 3)
+Issues: []
+
+03_aum_by_fund_house.csv
+Shape: (90, 5)
+Issues: []
+
+04_monthly_sip_inflows.csv
+Shape: (48, 6)
+Issues: ["Missing Values: {'yoy_growth_pct': 12}"]
+
+05_category_inflows.csv
+Shape: (144, 3)
+Issues: []
+
+06_industry_folio_count.csv
+Shape: (21, 6)
+Issues: []
+
+07_scheme_performance.csv
+Shape: (40, 19)
+Issues: []
+
+08_investor_transactions.csv
+Shape: (32778, 13)
+Issues: []
+
+09_portfolio_holdings.csv
+Shape: (322, 8)
+Issues: []
+
+10_benchmark_indices.csv
+Shape: (8050, 3)
+Issues: []
