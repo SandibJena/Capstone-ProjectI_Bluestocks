@@ -6,7 +6,7 @@ ingestion, ETL, data cleaning, SQL database design, exploratory data
 analysis (EDA), and dashboard-ready datasets.
 
 ------------------------------------------------------------------------
-
+git ls-remote https://github.com/SandibJena/Capstone-ProjectI_Bluestocks.git
 ## Tech Stack
 
 Python • Pandas • NumPy • SQLite • SQLAlchemy • Plotly • Matplotlib •
