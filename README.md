@@ -1,550 +1,113 @@
-# Mutual Fund Analytics – Bluestocks Fintech Capstone
+# Mutual Fund Analytics -- Bluestocks Fintech Capstone
 
-A comprehensive Data Engineering and Analytics project developed as part of the **Bluestocks Data Analyst Internship**. This project demonstrates an end-to-end ETL workflow, data cleaning, database design, SQL analytics, and documentation using real-world mutual fund datasets.
+An end-to-end **Data Engineering and Analytics** project developed
+during the **Bluestocks Data Analyst Internship**. It covers data
+ingestion, ETL, data cleaning, SQL database design, exploratory data
+analysis (EDA), and dashboard-ready datasets.
 
----
+------------------------------------------------------------------------
 
-# Table of Contents
+## Tech Stack
 
-- Project Overview
-- Tech Stack
-- Features
-- Project Structure
-- ETL Workflow
-- Quick Start
-- Day 1 Report
-- Day 2 Report
-- Day 3 Report (Exploratory Data Analysis)
-- Future Enhancements
-- Author
-- License
+Python • Pandas • NumPy • SQLite • SQLAlchemy • Plotly • Matplotlib •
+Seaborn • Jupyter • Git
 
----
+------------------------------------------------------------------------
 
-# Project Overview
+## Features
 
-This project was developed as part of the **Bluestocks Data Analyst Internship**. It demonstrates an end-to-end data engineering and analytics workflow for mutual fund datasets.
+-   CSV data ingestion & Live NAV integration
+-   ETL pipeline with data validation
+-   SQLite Star Schema
+-   SQL analytics
+-   Exploratory Data Analysis (EDA)
+-   Dashboard-ready datasets
 
-The project includes:
+------------------------------------------------------------------------
 
-- Data ingestion from multiple CSV datasets
-- Live NAV integration using the MFAPI
-- Data cleaning and validation
-- SQLite Star Schema design
-- ETL pipeline development
-- Analytical SQL queries
-- Documentation and reporting
+## Project Structure
 
-The primary objective is to transform raw mutual fund datasets into a clean, analysis-ready database that can support financial analytics and dashboard development.
-
----
-
-# Tech Stack
-
-- Python
-- Pandas
-- NumPy
-- SQLAlchemy
-- SQLite
-- Requests
-- Matplotlib
-- Seaborn
-- Plotly
-- Jupyter Notebook
-- Git & GitHub
-
----
-
-# Features
-
-- Automated CSV data ingestion
-- Live NAV API integration
-- Data validation and quality checks
-- ETL pipeline
-- SQLite Star Schema
-- Analytical SQL queries
-- Processed datasets
-- Technical documentation and reports
-
----
-
-# Project Structure
-
-```text
+``` text
 Capstone-ProjectI_Bluestocks/
-│
 ├── data/
-│   ├── raw/                          # Original datasets
-│   └── processed/                    # Cleaned datasets
-│
 ├── notebooks/
-│   └── EDA_Analysis.ipynb            # Exploratory Data Analysis Notebook
-│
 ├── reports/
-│   ├── charts/
-│   │   ├── nav_trend.png
-│   │   ├── aum_growth.png
-│   │   ├── monthly_sip_trend.png
-│   │   ├── category_heatmap.png
-│   │   ├── age_distribution_pie.png
-│   │   ├── gender_distribution.png
-│   │   ├── sip_amount_boxplot.png
-│   │   ├── state_sip_distribution.png
-│   │   ├── t30_b30_distribution.png
-│   │   ├── folio_growth.png
-│   │   ├── nav_correlation_matrix.png
-│   │   └── sector_allocation.png
-│   │
-│   ├── Day1_Project_Report.md
-│   ├── Day2_Data_Cleaning_Report.md
-│   └── Day3_EDA_Report.md
-│
-├── dashboard/                        # Power BI / Tableau (Upcoming)
-│
-├── sql/
-│   ├── schema.sql
-│   └── queries.sql
-│
 ├── scripts/
-│   ├── data_ingestion.py
-│   ├── live_nav_fetch.py
-│   └── data_cleaning_etl.py
-│
+├── sql/
+├── dashboard/
 ├── database/
-│   └── bluestock_mf.db
-│
-├── data_dictionary.md
 ├── requirements.txt
-├── README.md
-└── .gitignore
+└── README.md
 ```
 
----
+------------------------------------------------------------------------
 
-# ETL Workflow
+## Workflow
 
-```text
-Raw CSV Files
-      │
-      ▼
-Data Ingestion
-      │
-      ▼
-Data Cleaning
-      │
-      ▼
-SQLite Database
-      │
-      ▼
-SQL Analytics
-      │
-      ▼
-Dashboard & Reports
+``` text
+Raw Data → Data Ingestion → Data Cleaning → SQLite → EDA → Dashboard
 ```
 
----
+------------------------------------------------------------------------
 
-# Quick Start
+## Project Summary
 
-### 1. Create a Virtual Environment
+### Day 1 -- Project Setup & Data Ingestion
 
-```bash
-python -m venv .venv
-```
+-   Created project structure
+-   Loaded and validated 10 datasets
+-   Integrated Live NAV API
+-   Generated data quality reports
 
-Windows
+### Day 2 -- Data Cleaning & Database Design
 
-```bash
-.venv\Scripts\activate
-```
+-   Cleaned datasets
+-   Designed SQLite Star Schema
+-   Loaded data into SQLite
+-   Generated SQL queries and data dictionary
 
-Linux / macOS
+**Database Statistics**
 
-```bash
-source .venv/bin/activate
-```
+  Table                   Rows
+  ------------------- --------
+  dim_fund                  40
+  dim_date               1,296
+  fact_nav              46,000
+  fact_transactions     32,778
+  fact_performance          40
+  fact_aum                  90
 
-### 2. Install Dependencies
+### Day 3 -- Exploratory Data Analysis
 
-```bash
-pip install -r requirements.txt
-```
+Completed: - 12 visualizations - Business insights - EDA notebook -
+Exported PNG charts
 
-### 3. Place the provided datasets
+**Highlights** - Strong NAV growth in 2023 - SBI MF reached \~₹12.5 lakh
+crore AUM - SIP inflows peaked at ₹31,002 crore (Dec 2025) - Retail
+investor participation continued to grow
 
-Copy all provided CSV datasets into:
+------------------------------------------------------------------------
 
-```
-data/raw/
-```
+## Future Work
 
-or keep them in your **Downloads** folder.
+-   Power BI Dashboard
+-   Tableau Dashboard
+-   Predictive Analytics
+-   Portfolio Risk Analysis
 
-### 4. Run Data Ingestion
+------------------------------------------------------------------------
 
-```bash
-python data_ingestion.py
-```
+## Author
 
-### 5. Fetch Live NAV Data
-
-```bash
-python live_nav_fetch.py --codes 125497 119551 120503 118632 119092 120841
-```
-
----
-
-# Day 1 Report — Project Setup & Data Ingestion (ETL)
-
-**Date:** 25 June 2026
-
-## Objectives
-
-- Create project folder structure
-- Install required dependencies
-- Create requirements.txt
-- Load all provided datasets
-- Inspect data (.shape, .head(), .dtypes)
-- Implement Live NAV API integration
-- Validate AMFI codes
-- Initialize Git repository
-
-## Actions Completed
-
-- Created project folders:
-  - data/raw
-  - data/processed
-  - notebooks
-  - sql
-  - dashboard
-  - reports
-
-- Added:
-  - requirements.txt
-  - .gitignore
-
-- Installed required libraries:
-
-  - pandas
-  - numpy
-  - matplotlib
-  - seaborn
-  - plotly
-  - sqlalchemy
-  - requests
-  - scipy
-  - jupyter
-
-- Implemented `data_ingestion.py`
-
-  - Automatically locates datasets
-  - Prints dataset shape
-  - Prints data types
-  - Prints sample records
-  - Detects missing values
-  - Detects duplicate rows
-  - Generates:
-    - load_summary.txt
-    - data_quality_summary.txt
-
-- Implemented `live_nav_fetch.py`
-
-  - Fetches NAV from MFAPI
-  - Saves JSON response
-  - Converts JSON to CSV
-
-- Successfully loaded all 10 provided datasets.
-
-- Verified AMFI Codes using Fund Master and NAV History datasets.
-
-- Git Commit
-
-```
-Day 1: Data ingestion complete
-```
-
----
-
-## Day 1 Deliverables
-
-- data_ingestion.py
-- live_nav_fetch.py
-- requirements.txt
-- .gitignore
-- README.md
-- load_summary.txt
-- data_quality_summary.txt
-
----
-
-## Data Quality Notes
-
-- Missing values detected in `yoy_growth_pct`.
-- Mixed date formats were identified and safely handled during ingestion.
-
----
-
-# Day 2 Report — Data Cleaning & SQLite Database Design
-
-**Date:** 25 June 2026
-
-## Objectives
-
-- Clean raw datasets
-- Design SQLite Star Schema
-- Load cleaned datasets into SQLite
-- Write analytical SQL queries
-- Create Data Dictionary
-
----
-
-## Actions Completed
-
-Implemented `day2_etl.py` including:
-
-### NAV History
-
-- Date parsing
-- Sorting
-- Duplicate removal
-- Forward filling missing NAV values
-- NAV validation (>0)
-
-### Investor Transactions
-
-- Standardized transaction types
-- Parsed dates
-- Validated transaction amounts
-- Standardized KYC status
-
-### Scheme Performance
-
-- Converted returns to numeric
-- Flagged invalid values
-- Validated Expense Ratio (0.1%–2.5%)
-
-### Additional Cleaning
-
-- AUM datasets
-- Portfolio holdings
-- Benchmark datasets
-
----
-
-Generated:
-
-- schema.sql
-- queries.sql
-- data_dictionary.md
-- bluestock_mf.db
-
----
-
-## Database Statistics
-
-| Table | Rows |
-|------|------:|
-| dim_fund | 40 |
-| dim_date | 1,296 |
-| fact_nav | 46,000 |
-| fact_transactions | 32,778 |
-| fact_performance | 40 |
-| fact_aum | 90 |
-
----
-
-## Day 2 Deliverables
-
-- day2_etl.py
-- schema.sql
-- queries.sql
-- data_dictionary.md
-- bluestock_mf.db
-- Processed CSV datasets
-
----
-
-## Data Quality Notes
-
-- Mixed date formats successfully handled.
-- Expense Ratio outliers flagged.
-- Missing NAV values forward-filled for non-trading days.
-- Manual verification recommended for extended missing periods.
-
----
-
-# Future Enhancements
-
-- Exploratory Data Analysis (EDA)
-- Interactive visualizations
-- Power BI Dashboard
-- Tableau Dashboard
-- Advanced Risk Metrics
-- Portfolio Performance Analytics
-- Automated Data Validation Tests
-
----
-# Day 3 Report — Exploratory Data Analysis (EDA)
-
-**Date:** 03 July 2026
-
-## Objectives
-
-- Perform Exploratory Data Analysis (EDA) on the cleaned mutual fund datasets.
-- Analyze market trends, investor behavior, and portfolio characteristics.
-- Create interactive and static visualizations using Plotly, Matplotlib, and Seaborn.
-- Export visualization charts for reporting.
-- Document business insights derived from the analysis.
-
----
-
-## Actions Completed
-
-- Created `EDA_Analysis.ipynb` for complete exploratory data analysis.
-- Loaded all cleaned datasets from `data/processed/`.
-- Performed dataset validation and overview before analysis.
-- Converted date columns into appropriate datetime formats for time-series analysis.
-- Aggregated and transformed datasets for visualization and business analysis.
-
-### Visualizations Created
-
-#### NAV Analysis
-
-- Daily NAV Trend (2022–2026)
-- Highlighted:
-  - 2023 Bull Run
-  - 2024 Market Correction
-
-#### Assets Under Management (AUM)
-
-- Fund House-wise AUM Growth (2022–2025)
-- Highlighted SBI Mutual Fund's industry-leading AUM of approximately ₹12.5 Lakh Crore.
-
-#### SIP Analysis
-
-- Monthly SIP Inflow Trend
-- Annotated the record monthly SIP inflow of ₹31,002 Crore (December 2025).
-
-#### Category Analysis
-
-- Category-wise Net Inflow Heatmap
-
-#### Investor Demographics
-
-- Age Group Distribution
-- Gender Distribution
-- SIP Amount Distribution by Age Group
-
-#### Geographic Analysis
-
-- State-wise SIP Investment Distribution
-- T30 vs B30 City Tier Distribution
-
-#### Industry Growth
-
-- Mutual Fund Folio Growth Analysis
-
-#### Portfolio Analysis
-
-- NAV Return Correlation Matrix
-- Sector Allocation Donut Chart
-
----
-
-## Business Insights Generated
-
-- Mutual fund NAVs showed strong growth during the 2023 market rally.
-- Temporary market corrections were observed during 2024.
-- SBI Mutual Fund maintained the highest Assets Under Management.
-- Monthly SIP inflows consistently increased and reached ₹31,002 Crore in December 2025.
-- Flexi Cap, Large & Mid Cap, and Mid Cap categories attracted strong investor inflows.
-- Investors aged 26–45 years represented the largest segment of SIP investors.
-- Tier-30 cities contributed the majority of SIP investments.
-- Mutual fund folios demonstrated consistent growth throughout the analysis period.
-- Large-cap mutual funds exhibited strong positive return correlations.
-- Banking, Financial Services, Information Technology, and Pharma dominated portfolio allocations.
-
----
-
-## Visualizations Generated
-
-- NAV Trend Analysis
-- AUM Growth by Fund House
-- Monthly SIP Inflow Trend
-- Category Inflow Heatmap
-- Age Distribution Pie Chart
-- Gender Distribution Pie Chart
-- SIP Amount Box Plot
-- State-wise SIP Distribution
-- T30 vs B30 Distribution
-- Folio Growth Line Chart
-- NAV Correlation Matrix
-- Sector Allocation Donut Chart
-
----
-
-## Day 3 Deliverables
-
-- `EDA_Analysis.ipynb`
-- `Day3_EDA_Report.md`
-
-### Exported Charts
-
-- nav_trend.png
-- aum_growth.png
-- monthly_sip_trend.png
-- category_heatmap.png
-- age_distribution_pie.png
-- gender_distribution.png
-- sip_amount_boxplot.png
-- state_sip_distribution.png
-- t30_b30_distribution.png
-- folio_growth.png
-- nav_correlation_matrix.png
-- sector_allocation.png
-
----
-
-## Data Quality Notes
-
-- All cleaned datasets were validated before visualization.
-- Date columns were standardized for accurate time-series analysis.
-- Portfolio and transaction datasets were aggregated to derive business insights.
-- High-resolution PNG visualizations were successfully exported for reporting.
-- The notebook was verified to execute successfully from start to finish.
-
----
-
-# Future Enhancements
-
-- Develop an interactive Power BI dashboard.
-- Create Tableau dashboards with dynamic filtering.
-- Add predictive analytics for NAV and SIP forecasting.
-- Perform advanced portfolio optimization and risk analysis.
-- Build automated data validation and monitoring pipelines.
-- Deploy dashboards for real-time financial analytics.
-
----
-# Author
-
-**Sandib Jena**
-
-B.Tech – Computer Science & Engineering
-
+**Sandib Jena**\
+B.Tech -- Computer Science & Engineering\
 Government College of Engineering, Kalahandi
 
-**Role:** Data Analyst Intern
+GitHub: https://github.com/SandibJena/Capstone-ProjectI_Bluestocks
 
-**GitHub Repository**
+------------------------------------------------------------------------
 
-https://github.com/SandibJena/Capstone-ProjectI_Bluestocks
+## License
 
-**GitHub Profile**
-
-https://github.com/SandibJena
-
----
-
-# License
-
-This project was developed for educational purposes as part of the **Bluestocks Data Analyst Internship**.
+Developed for educational purposes as part of the Bluestocks Data
+Analyst Internship.
