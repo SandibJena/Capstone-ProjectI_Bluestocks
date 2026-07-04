@@ -14,6 +14,7 @@ A comprehensive Data Engineering and Analytics project developed as part of the 
 - Quick Start
 - Day 1 Report
 - Day 2 Report
+- Day 3 Report (Exploratory Data Analysis)
 - Future Enhancements
 - Author
 - License
@@ -69,25 +70,53 @@ The primary objective is to transform raw mutual fund datasets into a clean, ana
 
 # Project Structure
 
-```
+```text
 Capstone-ProjectI_Bluestocks/
 │
 ├── data/
-│   ├── raw/                 # Original datasets and Live NAV JSON/CSV
-│   └── processed/           # Cleaned datasets, summaries and reports
+│   ├── raw/                          # Original datasets
+│   └── processed/                    # Cleaned datasets
 │
-├── notebooks/              # Exploratory Data Analysis (EDA)
-├── dashboard/              # Power BI / Tableau dashboards
-├── reports/                # Internship reports
-├── sql/                    # SQL schema and analytical queries
+├── notebooks/
+│   └── EDA_Analysis.ipynb            # Exploratory Data Analysis Notebook
 │
-├── data_ingestion.py
-├── live_nav_fetch.py
-├── day2_etl.py
+├── reports/
+│   ├── charts/
+│   │   ├── nav_trend.png
+│   │   ├── aum_growth.png
+│   │   ├── monthly_sip_trend.png
+│   │   ├── category_heatmap.png
+│   │   ├── age_distribution_pie.png
+│   │   ├── gender_distribution.png
+│   │   ├── sip_amount_boxplot.png
+│   │   ├── state_sip_distribution.png
+│   │   ├── t30_b30_distribution.png
+│   │   ├── folio_growth.png
+│   │   ├── nav_correlation_matrix.png
+│   │   └── sector_allocation.png
+│   │
+│   ├── Day1_Project_Report.md
+│   ├── Day2_Data_Cleaning_Report.md
+│   └── Day3_EDA_Report.md
+│
+├── dashboard/                        # Power BI / Tableau (Upcoming)
+│
+├── sql/
+│   ├── schema.sql
+│   └── queries.sql
+│
+├── scripts/
+│   ├── data_ingestion.py
+│   ├── live_nav_fetch.py
+│   └── data_cleaning_etl.py
+│
+├── database/
+│   └── bluestock_mf.db
+│
 ├── data_dictionary.md
 ├── requirements.txt
-├── .gitignore
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
 ---
@@ -355,7 +384,147 @@ Generated:
 - Automated Data Validation Tests
 
 ---
+# Day 3 Report — Exploratory Data Analysis (EDA)
 
+**Date:** 03 July 2026
+
+## Objectives
+
+- Perform Exploratory Data Analysis (EDA) on the cleaned mutual fund datasets.
+- Analyze market trends, investor behavior, and portfolio characteristics.
+- Create interactive and static visualizations using Plotly, Matplotlib, and Seaborn.
+- Export visualization charts for reporting.
+- Document business insights derived from the analysis.
+
+---
+
+## Actions Completed
+
+- Created `EDA_Analysis.ipynb` for complete exploratory data analysis.
+- Loaded all cleaned datasets from `data/processed/`.
+- Performed dataset validation and overview before analysis.
+- Converted date columns into appropriate datetime formats for time-series analysis.
+- Aggregated and transformed datasets for visualization and business analysis.
+
+### Visualizations Created
+
+#### NAV Analysis
+
+- Daily NAV Trend (2022–2026)
+- Highlighted:
+  - 2023 Bull Run
+  - 2024 Market Correction
+
+#### Assets Under Management (AUM)
+
+- Fund House-wise AUM Growth (2022–2025)
+- Highlighted SBI Mutual Fund's industry-leading AUM of approximately ₹12.5 Lakh Crore.
+
+#### SIP Analysis
+
+- Monthly SIP Inflow Trend
+- Annotated the record monthly SIP inflow of ₹31,002 Crore (December 2025).
+
+#### Category Analysis
+
+- Category-wise Net Inflow Heatmap
+
+#### Investor Demographics
+
+- Age Group Distribution
+- Gender Distribution
+- SIP Amount Distribution by Age Group
+
+#### Geographic Analysis
+
+- State-wise SIP Investment Distribution
+- T30 vs B30 City Tier Distribution
+
+#### Industry Growth
+
+- Mutual Fund Folio Growth Analysis
+
+#### Portfolio Analysis
+
+- NAV Return Correlation Matrix
+- Sector Allocation Donut Chart
+
+---
+
+## Business Insights Generated
+
+- Mutual fund NAVs showed strong growth during the 2023 market rally.
+- Temporary market corrections were observed during 2024.
+- SBI Mutual Fund maintained the highest Assets Under Management.
+- Monthly SIP inflows consistently increased and reached ₹31,002 Crore in December 2025.
+- Flexi Cap, Large & Mid Cap, and Mid Cap categories attracted strong investor inflows.
+- Investors aged 26–45 years represented the largest segment of SIP investors.
+- Tier-30 cities contributed the majority of SIP investments.
+- Mutual fund folios demonstrated consistent growth throughout the analysis period.
+- Large-cap mutual funds exhibited strong positive return correlations.
+- Banking, Financial Services, Information Technology, and Pharma dominated portfolio allocations.
+
+---
+
+## Visualizations Generated
+
+- NAV Trend Analysis
+- AUM Growth by Fund House
+- Monthly SIP Inflow Trend
+- Category Inflow Heatmap
+- Age Distribution Pie Chart
+- Gender Distribution Pie Chart
+- SIP Amount Box Plot
+- State-wise SIP Distribution
+- T30 vs B30 Distribution
+- Folio Growth Line Chart
+- NAV Correlation Matrix
+- Sector Allocation Donut Chart
+
+---
+
+## Day 3 Deliverables
+
+- `EDA_Analysis.ipynb`
+- `Day3_EDA_Report.md`
+
+### Exported Charts
+
+- nav_trend.png
+- aum_growth.png
+- monthly_sip_trend.png
+- category_heatmap.png
+- age_distribution_pie.png
+- gender_distribution.png
+- sip_amount_boxplot.png
+- state_sip_distribution.png
+- t30_b30_distribution.png
+- folio_growth.png
+- nav_correlation_matrix.png
+- sector_allocation.png
+
+---
+
+## Data Quality Notes
+
+- All cleaned datasets were validated before visualization.
+- Date columns were standardized for accurate time-series analysis.
+- Portfolio and transaction datasets were aggregated to derive business insights.
+- High-resolution PNG visualizations were successfully exported for reporting.
+- The notebook was verified to execute successfully from start to finish.
+
+---
+
+# Future Enhancements
+
+- Develop an interactive Power BI dashboard.
+- Create Tableau dashboards with dynamic filtering.
+- Add predictive analytics for NAV and SIP forecasting.
+- Perform advanced portfolio optimization and risk analysis.
+- Build automated data validation and monitoring pipelines.
+- Deploy dashboards for real-time financial analytics.
+
+---
 # Author
 
 **Sandib Jena**
