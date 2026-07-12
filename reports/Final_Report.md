@@ -1,59 +1,241 @@
-# Day 1–2 Report — Mutual Fund Analytics (Bluestocks)
+# Final Report — Mutual Fund Analytics (Bluestocks Data Analyst Internship)
 
-**Summary**
-- Completed Day 1: project scaffold, ingestion scripts, requirements, and initial data loads.
-- Completed Day 2: cleaning, schema design, SQLite load, and analytical query set.
+## Project Overview
 
-**Key Artifacts**
-- **Ingestion script:** [data_ingestion.py](data_ingestion.py)
-- **Live NAV fetch:** [live_nav_fetch.py](live_nav_fetch.py)
-- **Day 2 ETL:** [day2_etl.py](day2_etl.py)
-- **Cleaned data (processed):** [data/processed/](data/processed/)
-- **SQLite DB:** [bluestock_mf.db](bluestock_mf.db)
-- **Schema:** [schema.sql](schema.sql)
-- **Queries:** [queries.sql](queries.sql)
-- **Data dictionary:** [data_dictionary.md](data_dictionary.md)
+This project was completed as part of the **Bluestocks Data Analyst Internship**. It demonstrates a complete mutual fund analytics pipeline, beginning with raw data ingestion and ending with advanced financial performance analysis.
 
-**Data Quality & Findings**
-- All `amfi_code` values in `01_fund_master.csv` were found in `02_nav_history.csv` (AMFI validation passed).
-- Row counts loaded into SQLite:
-  - **dim_fund:** 40 rows
-  - **dim_date:** 1,296 rows
-  - **fact_nav:** 46,000 rows
-  - **fact_transactions:** 32,778 rows
-  - **fact_performance:** 40 rows
-  - **fact_aum:** 90 rows
-- Noted anomalies:
-  - `04_monthly_sip_inflows.csv` had missing `yoy_growth_pct` values (12 nulls).
-  - Date parsing warnings occurred for some files (mixed formats); ETL coerces to ISO and may drop unparsable dates.
-  - Expense ratio checks exist in the ETL; review `data/processed/07_scheme_performance_cleaned.csv` for flagged out-of-range values (<0.1% or >2.5%).
+The project includes:
 
-**Repro / How to run**
-- Create venv and install:
-
-```
-python -m venv .venv
-# Windows
-.venv\Scripts\activate
-pip install -r requirements.txt
-```
-
-- Run ingestion and Day 2 ETL:
-
-```
-python data_ingestion.py
-python live_nav_fetch.py --codes 125497 119551 120503 118632 119092 120841
-python day2_etl.py
-```
-
-**Next recommended steps**
-- Add a notebook with exploratory analysis and visualisations under `notebooks/`.
-- Build a simple dashboard (Plotly Dash / Streamlit) under `dashboard/` to surface AUM, NAV trends, and SIP flows.
-- Add automated checks (unit tests or data tests) to validate date parsing, NAV > 0, and AMFI mapping.
-- Review `07_scheme_performance` expense outliers and reconcile with source.
-
-**Status**
-- Day 1 and Day 2 tasks completed and pushed to the repository: https://github.com/SandibJena/Capstone-ProjectI_Bluestocks
+- Data Ingestion (ETL)
+- Data Cleaning & Validation
+- SQLite Database Design
+- Exploratory Data Analysis (EDA)
+- Performance Analytics
+- Benchmark Comparison
+- Business Reporting
 
 ---
-Report generated: 2026-06-25
+
+# Task 1 — Project Setup & Data Ingestion
+
+## Objectives Completed
+
+- Created a professional project structure.
+- Loaded and validated 10 mutual fund datasets.
+- Integrated Live NAV data using MF API.
+- Performed AMFI code validation.
+- Generated data quality reports.
+
+### Deliverables
+
+- Project setup notebook
+- Data ingestion script
+- Live NAV fetch script
+- Raw datasets
+- Processed datasets
+
+---
+
+# Task 2 — Data Cleaning & SQL Database Design
+
+## Objectives Completed
+
+- Cleaned and standardized all datasets.
+- Handled missing values and inconsistent formats.
+- Designed SQLite Star Schema.
+- Loaded cleaned datasets into SQLite.
+- Created SQL analytical queries.
+- Prepared data dictionary.
+
+## Database Statistics
+
+| Table | Rows |
+|-------|------:|
+| dim_fund | 40 |
+| dim_date | 1,296 |
+| fact_nav | 46,000 |
+| fact_transactions | 32,778 |
+| fact_performance | 40 |
+| fact_aum | 90 |
+
+---
+
+# Task 3 — Exploratory Data Analysis (EDA)
+
+## Analysis Performed
+
+- NAV Trend Analysis
+- AUM Growth Analysis
+- Monthly SIP Trend
+- Category-wise Inflows
+- Folio Growth
+- Investor Demographics
+- Gender Distribution
+- State-wise SIP Distribution
+- Portfolio Sector Allocation
+- Correlation Analysis
+- Business Insights
+
+## Outputs Generated
+
+### Charts
+
+- NAV Trend
+- AUM Growth
+- Monthly SIP Trend
+- Category Heatmap
+- Folio Growth
+- Age Distribution
+- Gender Distribution
+- State Distribution
+- Sector Allocation
+- Correlation Matrix
+- SIP Distribution
+- Additional EDA Charts
+
+---
+
+# Task 4 — Performance Analytics
+
+## Financial Metrics Calculated
+
+- Daily Returns
+- CAGR (1-Year, 3-Year, 5-Year)
+- Sharpe Ratio
+- Sortino Ratio
+- Alpha & Beta
+- Maximum Drawdown
+- Fund Scorecard
+- Tracking Error
+
+## Benchmark Analysis
+
+Compared the Top 5 Mutual Funds with:
+
+- NIFTY50
+- NIFTY100
+
+Generated benchmark comparison visualization and tracking error analysis.
+
+## Outputs Generated
+
+### CSV Reports
+
+- cagr_comparison.csv
+- sharpe_ratio.csv
+- sortino_ratio.csv
+- alpha_beta.csv
+- maximum_drawdown.csv
+- fund_scorecard.csv
+- tracking_error.csv
+
+### Charts
+
+- benchmark_comparison.png
+
+---
+
+# Data Quality Summary
+
+- All AMFI codes successfully validated.
+- Cleaned datasets exported successfully.
+- SQLite database populated without errors.
+- Performance metrics computed successfully.
+- Benchmark comparison completed successfully.
+
+---
+
+# Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- SciPy
+- SQLite
+- SQLAlchemy
+- Matplotlib
+- Seaborn
+- Plotly
+- Jupyter Notebook
+- Git & GitHub
+
+---
+
+# Project Structure
+
+```text
+Capstone-ProjectI_Bluestocks/
+│
+├── data/
+├── database/
+├── dashboard/
+├── docs/
+├── notebooks/
+├── reports/
+│   ├── charts/
+│   ├── tables/
+│   ├── Project_Setup_Data_Ingestion.md
+│   ├── Data_Cleaning_SQL_Design.md
+│   ├── Exploratory_Data_Analysis.md
+│   ├── Performance_Analytics.md
+│   └── Final_Report.md
+├── scripts/
+├── sql/
+├── README.md
+└── requirements.txt
+```
+
+---
+
+# Key Achievements
+
+- Successfully implemented a complete ETL pipeline.
+- Designed a relational SQLite database using a Star Schema.
+- Conducted comprehensive exploratory data analysis with business insights.
+- Calculated industry-standard financial performance metrics.
+- Developed a composite Fund Scorecard for ranking mutual funds.
+- Compared top-performing funds with benchmark indices.
+- Generated dashboard-ready datasets, charts, and analytical reports.
+
+---
+
+# Future Enhancements
+
+- Interactive Power BI Dashboard
+- Tableau Dashboard
+- Portfolio Optimization
+- Machine Learning-based Return Prediction
+- Mutual Fund Recommendation System
+- Automated Data Validation Pipeline
+
+---
+
+# Repository
+
+GitHub Repository:
+
+**https://github.com/SandibJena/Capstone-ProjectI_Bluestocks**
+
+---
+
+# Author
+
+**Sandib Jena**
+
+B.Tech – Computer Science & Engineering
+
+Government College of Engineering, Kalahandi
+
+---
+
+# Conclusion
+
+The Mutual Fund Analytics project successfully demonstrates an end-to-end data analytics workflow, from raw data ingestion and database design to exploratory analysis and advanced financial performance evaluation.
+
+The project integrates ETL processes, SQL, Python-based analytics, financial metric computation, visualization, and reporting into a structured solution suitable for business intelligence and investment analysis.
+
+All assigned internship objectives for the completed tasks have been successfully achieved.
+
+---
+
+**Report Generated:** July 2026

@@ -1,113 +1,240 @@
-# Mutual Fund Analytics -- Bluestocks Fintech Capstone
+# Mutual Fund Analytics – Bluestocks Data Analyst Internship Capstone
 
-An end-to-end **Data Engineering and Analytics** project developed
-during the **Bluestocks Data Analyst Internship**. It covers data
-ingestion, ETL, data cleaning, SQL database design, exploratory data
-analysis (EDA), and dashboard-ready datasets.
+An end-to-end **Data Engineering, Financial Analytics, and Business Intelligence** project developed during the **Bluestocks Data Analyst Internship**.
 
-------------------------------------------------------------------------
-git ls-remote https://github.com/SandibJena/Capstone-ProjectI_Bluestocks.git
+This project demonstrates a complete mutual fund analytics pipeline, covering data ingestion, ETL, data cleaning, SQL database design, exploratory data analysis (EDA), financial performance analytics, benchmark comparison, and dashboard-ready outputs.
+
+---
+
+## Project Objectives
+
+- Build an end-to-end ETL pipeline for mutual fund datasets.
+- Design a relational SQLite database using a Star Schema.
+- Perform Exploratory Data Analysis (EDA) with business insights.
+- Calculate industry-standard financial performance metrics.
+- Compare mutual funds with benchmark indices.
+- Generate reports, visualizations, and dashboard-ready datasets.
+
+---
+
 ## Tech Stack
 
-Python • Pandas • NumPy • SQLite • SQLAlchemy • Plotly • Matplotlib •
-Seaborn • Jupyter • Git
+- Python
+- Pandas
+- NumPy
+- SciPy
+- SQLite
+- SQLAlchemy
+- Matplotlib
+- Seaborn
+- Plotly
+- Jupyter Notebook
+- Git & GitHub
 
-------------------------------------------------------------------------
+---
 
-## Features
+## Project Features
 
--   CSV data ingestion & Live NAV integration
--   ETL pipeline with data validation
--   SQLite Star Schema
--   SQL analytics
--   Exploratory Data Analysis (EDA)
--   Dashboard-ready datasets
+### Task 1 – Project Setup & Data Ingestion
 
-------------------------------------------------------------------------
+- Professional project structure
+- CSV data ingestion
+- Live NAV API integration
+- Data validation
+- Data quality reports
 
-## Project Structure
+### Task 2 – Data Cleaning & SQL Database Design
 
-``` text
+- Data cleaning and preprocessing
+- SQLite Star Schema implementation
+- SQL analytics
+- Data dictionary
+- Database creation
+
+### Task 3 – Exploratory Data Analysis (EDA)
+
+- NAV Trend Analysis
+- AUM Growth Analysis
+- Monthly SIP Trend
+- Category-wise Inflows
+- Folio Growth Analysis
+- Investor Demographics
+- Geographic Distribution
+- Sector Allocation
+- Correlation Analysis
+- Business Insights
+
+### Task 4 – Performance Analytics
+
+- Daily Returns
+- CAGR (1-Year, 3-Year & 5-Year)
+- Sharpe Ratio
+- Sortino Ratio
+- Alpha & Beta
+- Maximum Drawdown
+- Composite Fund Scorecard
+- Tracking Error
+- Benchmark Comparison
+
+---
+
+# Project Structure
+
+```text
 Capstone-ProjectI_Bluestocks/
-├── data/
-├── notebooks/
-├── reports/
-├── scripts/
-├── sql/
+│
 ├── dashboard/
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
 ├── database/
+│
+├── docs/
+│
+├── notebooks/
+│   ├── Project_Setup_Data_Ingestion.ipynb
+│   ├── Data_Cleaning_SQL_Design.ipynb
+│   ├── EDA_Analysis.ipynb
+│   └── Performance_Analytics.ipynb
+│
+├── reports/
+│   ├── charts/
+│   ├── tables/
+│   ├── Project_Setup_Data_Ingestion.md
+│   ├── Data_Cleaning_SQL_Design.md
+│   ├── Exploratory_Data_Analysis.md
+│   ├── Performance_Analytics.md
+│   └── Final_Report.md
+│
+├── scripts/
+│
+├── sql/
+│   ├── schema.sql
+│   └── queries.sql
+│
+├── README.md
 ├── requirements.txt
-└── README.md
+└── LICENSE
 ```
 
-------------------------------------------------------------------------
+---
 
-## Workflow
+# Workflow
 
-``` text
-Raw Data → Data Ingestion → Data Cleaning → SQLite → EDA → Dashboard
+```text
+Raw Data
+      │
+      ▼
+Project Setup & Data Ingestion (ETL)
+      │
+      ▼
+Data Cleaning & Validation
+      │
+      ▼
+SQLite Database (Star Schema)
+      │
+      ▼
+Exploratory Data Analysis (EDA)
+      │
+      ▼
+Performance Analytics
+      │
+      ▼
+Benchmark Comparison
+      │
+      ▼
+Reports & Dashboard-ready Outputs
 ```
 
-------------------------------------------------------------------------
+---
 
-## Project Summary
+# Database Statistics
 
-### Day 1 -- Project Setup & Data Ingestion
+| Table | Rows |
+|-------|-----:|
+| dim_fund | 40 |
+| dim_date | 1,296 |
+| fact_nav | 46,000 |
+| fact_transactions | 32,778 |
+| fact_performance | 40 |
+| fact_aum | 90 |
 
--   Created project structure
--   Loaded and validated 10 datasets
--   Integrated Live NAV API
--   Generated data quality reports
+---
 
-### Day 2 -- Data Cleaning & Database Design
+# Generated Outputs
 
--   Cleaned datasets
--   Designed SQLite Star Schema
--   Loaded data into SQLite
--   Generated SQL queries and data dictionary
+## Charts
 
-**Database Statistics**
+- NAV Trend
+- AUM Growth
+- Monthly SIP Trend
+- Category Heatmap
+- Folio Growth
+- Age Distribution
+- Gender Distribution
+- State-wise SIP Distribution
+- Sector Allocation
+- NAV Correlation Matrix
+- Benchmark Comparison
+- Additional EDA Visualizations
 
-  Table                   Rows
-  ------------------- --------
-  dim_fund                  40
-  dim_date               1,296
-  fact_nav              46,000
-  fact_transactions     32,778
-  fact_performance          40
-  fact_aum                  90
+---
 
-### Day 3 -- Exploratory Data Analysis
+## CSV Reports
 
-Completed: - 12 visualizations - Business insights - EDA notebook -
-Exported PNG charts
+- CAGR Comparison
+- Sharpe Ratio
+- Sortino Ratio
+- Alpha & Beta
+- Maximum Drawdown
+- Fund Scorecard
+- Tracking Error
 
-**Highlights** - Strong NAV growth in 2023 - SBI MF reached \~₹12.5 lakh
-crore AUM - SIP inflows peaked at ₹31,002 crore (Dec 2025) - Retail
-investor participation continued to grow
+---
 
-------------------------------------------------------------------------
+# Key Highlights
 
-## Future Work
+- Successfully processed **10 mutual fund datasets**.
+- Designed a **SQLite Star Schema** database.
+- Generated **12+ business visualizations**.
+- Calculated **industry-standard financial performance metrics**.
+- Developed a **composite Fund Scorecard** for ranking mutual funds.
+- Compared top-performing funds with **NIFTY50** and **NIFTY100** benchmark indices.
+- Generated dashboard-ready reports and analytical datasets.
 
--   Power BI Dashboard
--   Tableau Dashboard
--   Predictive Analytics
--   Portfolio Risk Analysis
+---
 
-------------------------------------------------------------------------
+# Future Enhancements
 
-## Author
+- Interactive Power BI Dashboard
+- Tableau Dashboard
+- Portfolio Optimization
+- Risk Forecasting
+- Machine Learning-based Return Prediction
+- Mutual Fund Recommendation System
 
-**Sandib Jena**\
-B.Tech -- Computer Science & Engineering\
+---
+
+# Author
+
+**Sandib Jena**
+
+B.Tech – Computer Science & Engineering
+
 Government College of Engineering, Kalahandi
 
-GitHub: https://github.com/SandibJena/Capstone-ProjectI_Bluestocks
+GitHub Repository:
 
-------------------------------------------------------------------------
+https://github.com/SandibJena/Capstone-ProjectI_Bluestocks
 
-## License
+LinkedIn:
 
-Developed for educational purposes as part of the Bluestocks Data
-Analyst Internship.
+https://www.linkedin.com/in/sandib-jena
+
+---
+
+# License
+
+This project was developed for educational purposes as part of the **Bluestocks Data Analyst Internship**.
